@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/28 12:50:55 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/01/31 09:20:05 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/01/31 18:21:02 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_json		*parse_obj(char **json)
 {
 	t_json *value;
 
-	value = (t_json*)malloc(sizeof(t_json));
+	value = (t_json*)ft_memalloc(sizeof(t_json));
 	value->next = NULL;
 	skip_blanks(json);
 	if (**json != '"')
@@ -64,7 +64,7 @@ t_json_arr	*parse_arr(char **json)
 	skip_blanks(json);
 	if (**json == ']')
 		return (NULL);
-	value = (t_json_arr*)malloc(sizeof(t_json_arr));
+	value = (t_json_arr*)ft_memalloc(sizeof(t_json_arr));
 	parser_value(json, &value->value);
 	skip_blanks(json);
 	if (**json == ',')
