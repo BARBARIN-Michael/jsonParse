@@ -6,11 +6,12 @@
 /*   By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 12:18:49 by mbarbari          #+#    #+#             */
-/*   Updated: 2016/03/31 12:16:15 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/01/31 09:19:47 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
+#include "libft.h"
 
 char		*parse_string(char **json)
 {

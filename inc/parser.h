@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include "parser_union.h"
-# include "libft.h"
 
 # define TYPE_ERROR		-1
 # define TYPE_OBJECT	0

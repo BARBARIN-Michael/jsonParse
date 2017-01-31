@@ -6,12 +6,13 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/28 12:50:55 by mbarbari          #+#    #+#             */
-/*   Updated: 2016/04/01 17:40:08 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/01/31 09:20:05 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "parser.h"
 #include "stream.h"
+#include "libft.h"
 
 t_json		*parse_obj2(char **json, t_json *value)
 {
