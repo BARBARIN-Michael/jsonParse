@@ -12,6 +12,7 @@
 
 CC ?= gcc
 CX ?= clang++
+CP = cp
 
 NAME = libjson.a
 
@@ -40,6 +41,7 @@ $(LIBFT_PATH)/libft.a:
 	$(MAKE) -C $(LIBFT_PATH)
 
 $(NAME): $(COM_OBJS)
+	$(CP) $(LIBFT_PATH)libft.a $(NAME)
 	$(AR) -rcs $(NAME) $?
 
 obj/%.o: src/%.c $(LIBFT_PATH)/libft.a $(PARSE_INCS)
