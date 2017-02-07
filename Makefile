@@ -6,7 +6,7 @@
 #    By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/07 16:55:33 by mbarbari          #+#    #+#              #
-#    Updated: 2017/01/06 14:30:06 by barbare          ###   ########.fr        #
+#    Updated: 2017/02/07 14:30:41 by mbarbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ NAME = libjson.a
 CFLAGS += -Wall -Wextra -Werror -Iinc/ -Ilibft/include
 
 PARSE_SRCS = 	src/foreach.c \
+    			src/free_parser.c \
     			src/parse_function.c \
     			src/parse_type.c \
     			src/parser.c

@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/28 12:50:55 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/01/31 18:21:02 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/07 14:27:13 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,17 @@ t_value		parser(char *file_name)
 {
 	int			fd;
 	char		*line;
+	char		*linetofree;
 	t_stream	stream;
-	size_t		read;
 	t_value		value;
 
-	read = 1;
+	line = NULL;
 	value = (t_value){.type = 0, .error = 0};
 	fd = open(file_name, O_RDONLY);
 	create_stream(fd, &stream);
 	while (read_until(&stream, &line, '\0') > 0)
 	{
+		linetofree = line;
 		if (*line == '{')
 		{
 			value.type = 0;
@@ -99,6 +100,8 @@ t_value		parser(char *file_name)
 		}
 		else
 			value.error = TYPE_ERROR;
+		free(linetofree);
+		line = NULL;
 	}
 	return (value);
 }
