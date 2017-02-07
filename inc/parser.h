@@ -6,7 +6,7 @@
 /*   By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 11:28:23 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/02/07 14:30:14 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/07 14:51:55 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void			json_foreach_obj(t_json *x,
 void			json_foreach_arr(t_json_arr *x,
 	void (cb)(t_value, int, void*), void *a);
 int				json_arr_length(t_json_arr *x);
-void			json_free(t_value *value);
+void			json_free(t_value value);
 
 #endif
