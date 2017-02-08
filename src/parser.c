@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/28 12:50:55 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/02/08 15:05:51 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/08 16:45:45 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ t_json		*parse_obj(char **json)
 	*json += 1;
 	value->key = ft_strsub(*json, 0, sub_pointer(ft_strchr(*json + 1, '"'),
 		*json));
-	dprintf(2, "CREATION D'UNE KEY : %s - %p \n", value->key, value);
 	*json = *json + ft_strlen(value->key) + 1;
 	skip_blanks(json);
 	if (**json != ':')
@@ -51,7 +50,6 @@ t_json		*parse_obj(char **json)
 	*json += 1;
 	skip_blanks(json);
 	parser_value(json, &value->value);
-	dprintf(2, "Test du type : %d\n", value->value.type);
 	skip_blanks(json);
 	if (parse_obj2(json, value) == NULL)
 		return (NULL);

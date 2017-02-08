@@ -6,7 +6,7 @@
 /*   By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/10 12:18:49 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/02/08 14:56:52 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/08 16:45:40 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,11 @@ void		parser_value(char **json, t_value *value)
 	{
 		*json += 1;
 		value->data.s = parse_string(json);
-		value->type = TYPE_STRING;
-		dprintf(2, "AJUSTEMENT DE LA VALUE : %s\n", value->data.s);
 	}
 	else if (**json == '{')
 	{
 		*json += 1;
 		value->data.obj = parse_obj(json);
-		dprintf(2, "AJUSTEMENT DE LA VALUE : OBJECT\n");
 	}
 	else if (**json == '[')
 	{
@@ -78,13 +75,7 @@ void		parser_value(char **json, t_value *value)
 	}
 	else if (ft_strncmp(*json, "true", 4) == 0 || ft_strncmp(*json, "false", 5)
 		== 0)
-	{
 		value->data.boolean = parse_boolean(json);
-		dprintf(2, "AJUSTEMENT DE LA VALUE : %d\n", value->data.boolean);
-	}
 	else if (ft_isdigit(**json) || (**json == '-') || (**json == '+'))
-	{
 		value->data.number = parse_number(json);
-		dprintf(2, "AJUSTEMENT DE LA VALUE : %f\n", value->data.number);
-	}
 }
