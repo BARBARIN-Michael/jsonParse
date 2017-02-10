@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/03 11:23:33 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/02/08 16:10:16 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/10 09:17:47 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_value		json_get(t_json *parse, char *str)
 }
 
 void		json_foreach_obj(t_json *parse, void (cb)(t_value, char *s, void*),
-	void *a)
+		void *a)
 {
 	t_json	*x;
 
@@ -45,9 +45,9 @@ void		json_foreach_obj(t_json *parse, void (cb)(t_value, char *s, void*),
 }
 
 void		json_foreach_arr(t_json_arr *parse, void (cb)(t_value, int, void*),
-	void *a)
+		void *a)
 {
-	int i;
+	int			i;
 	t_json_arr	*x;
 
 	x = parse;

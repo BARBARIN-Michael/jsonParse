@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/07 14:22:34 by mbarbari          #+#    #+#             */
-/*   Updated: 2017/02/08 16:24:16 by mbarbari         ###   ########.fr       */
+/*   Updated: 2017/02/10 09:15:29 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		json_free_array(t_value value)
 		json_free(obj->value);
 		next = obj->next;
 		free(obj);
- 		obj = next;
+		obj = next;
 	}
 }
 
@@ -47,7 +47,6 @@ void		json_free(t_value value)
 		if (obj->key)
 			free(obj->key);
 		free(obj);
-		
- 		obj = next;
+		obj = next;
 	}
 }
